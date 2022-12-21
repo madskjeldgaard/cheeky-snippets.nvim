@@ -8,14 +8,14 @@ local c = ls.choice_node
 local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parse_snippet
+local common = require"cheeky.common"
 
 return {
 	s(
 		"start",
-		fmt("{}", {
-			c(1, {
-				-- Apple silicon
-				t([[// APPLE SILICON ARM64 ASSEMBLY
+		c(1, {
+			-- Apple silicon
+			common.tmulti[[// APPLE SILICON ARM64 ASSEMBLY
 // Assembler program to print "Hello World!"
 // to stdout.
 //
@@ -40,9 +40,11 @@ _start: mov	X0, #1		// 1 = StdOut
 	mov     X16, #1		// System call number 1 terminates this program
 	svc     #0x80		// Call kernel to terminate the program
 
-helloworld:      .ascii  "Hello World!\n"]]),
-				t([[// LINUX ARM64 ASSEMBLY
-.data
+helloworld:      .ascii  "Hello World!\n"]],
+			-- Arm Linux
+			common.tmulti[[// LINUX ARM64 ASSEMBLY
+
+			.data
 
 /* Data segment: define our message string and calculate its length. */
 helloworld:
@@ -64,11 +66,10 @@ _start:
     /* syscall exit(int status) */
     mov     x0, #0               /* status := 0 */
     mov     w8, #93              /* exit is syscall #1 */
-    svc     #0                   /* invoke syscall */]])
-			}),
-		}, {
-				delimiters = "{}",
-			})
-	)
+    svc     #0                   /* invoke syscall */
+			]]
+		})
+	),
+	-- parse("armlinux")
 
 }

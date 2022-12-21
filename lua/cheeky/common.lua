@@ -57,4 +57,16 @@ M.ifilenameNoExtUpper = function(no)
   return i(no, string.upper(vim.fn.expand("%:t"):gsub("%..*", "")))
 end
 
+---text node that split splits a multi line string automatically into a table
+---@param str - multi-line string
+---@return table text text-node
+M.tmulti = function(str)
+	local lines = {}
+	for splitstring in str:gmatch("[^\r\n]+") do
+		table.insert(lines, splitstring)
+	end
+
+	return t(lines)
+end
+
 return M
