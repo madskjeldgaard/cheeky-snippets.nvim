@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
     fmt([[std::any_of({}.cbegin(), {}.cend(), {});]], {
       i(1, "v"),
       rep(1),
-      i(2, "[](int i){ return i % 2 == 0; }"),
+      i(2, [[[](int i){ return i % 2 == 0; }]]),
     })
   ),
 
@@ -168,22 +168,95 @@ int main(int argc, char **argv) {
     })
   ),
 
-  -- TODO:
   -- Remove
+	s(
+    "remove",
+    fmt([[std::remove({}.begin(), {}.end(), {});]], {
+      i(1, "from_vector"),
+			rep(1),
+	i(2, "2")
+    })
+  ),
+
+  -- Remove if
+	s(
+    "removeif",
+    fmt([[std::remove_if({}.begin(), {}.end(), {});]], {
+      i(1, "myvector"),
+      rep(1),
+      i(2, "[](int x) { return x % 3 == 0; }"),
+    })
+  ),
   -- Iota
+	s(
+    "iota",
+    fmt([[std::iota({}.begin(), {}.end(), {});]], {
+      i(1, "myvector"),
+	rep(1),
+      i(2, "4"),
+    })
+  ),
   -- Reverse
-  -- Partial sort
-  -- Sort
+	s(
+		"reverse",
+		fmt([[std::reverse({}.begin(), {}.end());]], {
+			i(1, "myvector"),
+			rep(1),
+		})
+	),
+	-- Sort
+	s(
+		"sort",
+		fmt([[std::sort({}.begin(), {}.end());]], {
+			i(1, "myvector"),
+			rep(1),
+		})
+	),
   -- Shuffle
-  -- Sample
+	s(
+		"shuffle",
+		fmt([[std::random_device rd;
+std::mt19937 g(rd());
+std::shuffle({}.begin(), {}.end(), {});]], {
+			i(1, "myvector"),
+			rep(1),
+			i(2, "g")
+		})
+	),
+	-- Sample
+	s(
+		"sample",
+		fmt([[std::random_device rd;
+std::mt19937 g(rd());
+std::sample({}.begin(), {}.end(), {}, {}, {});]], {
+				i(1, "myvector"),
+				rep(1),
+				i(2, "std::back_inserter(out)"),
+				i(3, "numSamples"),
+				i(4, "g")
+		})
+	),
+
+  -- Rotate
+	s(
+		"rotate",
+		fmt([[std::rotate({}.begin(), {}.end() + {}, {}.end());]], {
+				i(1, "myvector"),
+				rep(1),
+				i(2, "1"),
+				rep(3)
+		})
+	),
+
+-- TODO
   -- Equal
   -- Mismatch
-  -- Rotate
   -- Previous permutation
   -- Next permutation
   -- Max element
   -- Min element
   -- Set_*
+  -- Partial sort
 
   ----------------------------------------------------------------------
   --                         STL containers                           --
