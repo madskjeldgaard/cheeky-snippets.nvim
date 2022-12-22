@@ -2,7 +2,7 @@ local M = {}
 
 local ls = require "luasnip"
 
-local defaults =require "cheeky.defaults"
+local defaults = require "cheeky.defaults"
 
 M.setup = function(opts)
   if opts == nil then
