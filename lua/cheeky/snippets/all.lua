@@ -17,8 +17,8 @@ local lambda = require("luasnip.extras").l
 local common = require("cheeky.common")
 
 return {
-  s({
-    trig = "time",
-    name = "Time",
-  }, common.time("%m/%d/%G %H:%M")),
+	s({
+		trig = "time",
+		name = "Time",
+	}, common.time("%m/%d/%G %H:%M")),
 }

@@ -1,4 +1,4 @@
-local ls = require('luasnip')
+local ls = require("luasnip")
 local s = ls.snippet
 local sn = ls.snippet_node
 local t = ls.text_node
@@ -8,14 +8,14 @@ local c = ls.choice_node
 local d = ls.dynamic_node
 local fmt = require("luasnip.extras.fmt").fmt
 local parse = ls.parser.parse_snippet
-local common = require"cheeky.common"
+local common = require("cheeky.common")
 
 return {
 	s(
 		"start",
 		c(1, {
 			-- Apple silicon
-			common.tmulti[[// APPLE SILICON ARM64 ASSEMBLY
+			common.tmulti([[// APPLE SILICON ARM64 ASSEMBLY
 // Assembler program to print "Hello World!"
 // to stdout.
 //
@@ -40,9 +40,9 @@ _start: mov	X0, #1		// 1 = StdOut
 	mov     X16, #1		// System call number 1 terminates this program
 	svc     #0x80		// Call kernel to terminate the program
 
-helloworld:      .ascii  "Hello World!\n"]],
+helloworld:      .ascii  "Hello World!\n"]]),
 			-- Arm Linux
-			common.tmulti[[// LINUX ARM64 ASSEMBLY
+			common.tmulti([[// LINUX ARM64 ASSEMBLY
 
 			.data
 
@@ -67,9 +67,8 @@ _start:
     mov     x0, #0               /* status := 0 */
     mov     w8, #93              /* exit is syscall #1 */
     svc     #0                   /* invoke syscall */
-			]]
+			]]),
 		})
 	),
 	-- parse("armlinux")
-
 }

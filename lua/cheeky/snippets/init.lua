@@ -4,8 +4,8 @@ local cpp = require("cheeky.snippets.cpp")
 local asm = require("cheeky.snippets.asm")
 
 return {
-  all = all,
-  lua = lua,
-  cpp = cpp,
-  asm = asm
+	all = all,
+	lua = lua,
+	cpp = cpp,
+	asm = asm,
 }
