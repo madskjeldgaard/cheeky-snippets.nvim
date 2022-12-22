@@ -1,0 +1,22 @@
+name: Format code using stylua
+on:
+  push:
+    branches:
+      - main
+jobs:
+  format-code:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: JohnnyMorganz/stylua-action@v2
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        version: latest
+        args:  .
+    - uses: EndBug/add-and-commit@v4
+      with:
+        author_name: Steve The Stylua Robot
+        author_email: robot@example.com
+        message: 'style: 💋 Auto-fix formatting using stylua 💋'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
