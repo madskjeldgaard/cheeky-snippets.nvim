@@ -1,8 +1,8 @@
 return {
-	langs = {
-		all = true,
-		lua = true,
-		cpp = true,
-		-- asm = true
-	},
+  langs = {
+    all = true,
+    lua = true,
+    cpp = true,
+    -- asm = true
+  },
 }
