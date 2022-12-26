@@ -3,6 +3,7 @@ return {
     all = true,
     lua = true,
     cpp = true,
-    -- asm = true
+    asm = true,
+    markdown = true,
   },
 }
