@@ -8,7 +8,7 @@ Inspired by [spoon.nvim](https://github.com/utilyre/spoon.nvim)
 
 * General Snippets aka `all` (available everywhere)
 * Lua
-* CPP
+* CPP (with support for a lot of STL containers and algos and modern c++ stuff etc.)
 * Assembly
 
 ## Installation
@@ -32,3 +32,7 @@ use{
 	end
 }
 ```
+
+## Development
+
+The command `:CheekyReload` will reload all snippets. This is useful when developing new snippets for this plugin. Run it after you've added something new and want to test it imediately.
