@@ -5,6 +5,7 @@ local function prequire(...)
   end
   return nil
 end
+
 local ls = prequire "luasnip"
 local cmp = prequire "cmp"
 local s = ls.snippet
@@ -74,13 +75,13 @@ local SN4SN = {
 if the parent folder of a lua buffer is named 'snippets'
 append snippets for snippets to the snippets :)~
 --]]
-if vim.fn.expand "%:p:h:t" == "snippets" then
-  print "lets write some snippets"
-  local snippets = { unpack(SN) }
-  for I = 1, #SN4SN do
-    snippets[#SN + I] = SN4SN[I]
-  end
-  SN = snippets
+-- if vim.fn.expand "%:p:h:t" == "snippets" then
+-- print "lets write some snippets"
+local snippets = { unpack(SN) }
+for I = 1, #SN4SN do
+  snippets[#SN + I] = SN4SN[I]
 end
+SN = snippets
+-- end
 
 return SN
