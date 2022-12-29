@@ -27,7 +27,7 @@ M.reload = function(opts)
         package.loaded[packageName] = nil
 
         -- This is used to make sure old snippets are removed when reused
-        reloadOpts.key = "cheeky"
+        -- reloadOpts.key = "cheeky"
       end
 
       ls.add_snippets(lang, snippets[lang], reloadOpts)
