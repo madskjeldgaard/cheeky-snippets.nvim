@@ -32,6 +32,13 @@ int main(int argc, char **argv) {
   return ret;
 }]]
   ),
+	----------------------------------------------------------------------
+	--                             Pointers                             --
+	----------------------------------------------------------------------
+	-- https://en.cppreference.com/w/cpp/memory
+  s("up", fmt([[std::unique_ptr<{}> {}]], {i(1, "int"), i(2, "myint")})),
+  s("sp", fmt([[std::shared_ptr<{}> {}]], {i(1, "int"), i(2, "myint")})),
+  s("wp", fmt([[std::weak_ptr<{}> {}]], {i(1, "int"), i(2, "myint")})),
 
   ----------------------------------------------------------------------
   --                             Printing                             --
