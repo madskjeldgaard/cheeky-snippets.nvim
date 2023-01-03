@@ -52,6 +52,7 @@ int main(int argc, char **argv) {
   parse("c", "const"),
 
   s("sc", fmt("static_cast<{}>({})", { i(1, "int"), i(2, "val") })),
+  s("sa", fmt("static_assert({}, {})", { i(1, "true == true"), i(2, [["true!"]]) })),
   parse("ca", "const auto"),
   s("ce", fmt("constexpr {} {} = {};", { i(1, "auto"), i(2, "int"), i(3, "1") })),
 
@@ -146,7 +147,7 @@ int main(int argc, char **argv) {
     fmt([[std::for_each(begin({}), end({}), {});]], {
       i(1, "v"),
       rep(1),
-      i(2, "[](const int& n) { printf(n); }"),
+      i(2, "[this](int& n) { printf(n); }"),
     })
   ),
 
