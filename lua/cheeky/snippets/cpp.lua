@@ -63,27 +63,26 @@ int main(int argc, char **argv) {
     })
   ),
 
-
-	----------------------------------------------------------------------
-	--                              ratios                              --
-	----------------------------------------------------------------------
-	s("ratio", fmt("std::ratio<{}, {}>", { i(1, "5"), i(2, "1") })),
-	parse("atto",	[[std::ratio<1, 1000000000000000000>]]),
-	parse("femto",	[[std::ratio<1, 1000000000000000>]]),
-	parse("pico",	[[std::ratio<1, 1000000000000>]]),
-	parse("nano",	[[std::ratio<1, 1000000000>]]),
-	parse("micro",	[[std::ratio<1, 1000000>]]),
-	parse("milli",	[[std::ratio<1, 1000>]]),
-	parse("centi",	[[std::ratio<1, 100>]]),
-	parse("deci",	[[std::ratio<1, 10>]]),
-	parse("deca",	[[std::ratio<10, 1>]]),
-	parse("hecto",	[[std::ratio<100, 1>]]),
-	parse("kilo",	[[std::ratio<1000, 1>]]),
-	parse("mega",	[[std::ratio<1000000, 1>]]),
-	parse("giga",	[[std::ratio<1000000000, 1>]]),
-	parse("tera",	[[std::ratio<1000000000000, 1>]]),
-	parse("peta",	[[std::ratio<1000000000000000, 1>]]),
-	parse("exa",	[[std::ratio<1000000000000000000, 1>]]),
+  ----------------------------------------------------------------------
+  --                              ratios                              --
+  ----------------------------------------------------------------------
+  s("ratio", fmt("std::ratio<{}, {}>", { i(1, "5"), i(2, "1") })),
+  parse("atto", [[std::ratio<1, 1000000000000000000>]]),
+  parse("femto", [[std::ratio<1, 1000000000000000>]]),
+  parse("pico", [[std::ratio<1, 1000000000000>]]),
+  parse("nano", [[std::ratio<1, 1000000000>]]),
+  parse("micro", [[std::ratio<1, 1000000>]]),
+  parse("milli", [[std::ratio<1, 1000>]]),
+  parse("centi", [[std::ratio<1, 100>]]),
+  parse("deci", [[std::ratio<1, 10>]]),
+  parse("deca", [[std::ratio<10, 1>]]),
+  parse("hecto", [[std::ratio<100, 1>]]),
+  parse("kilo", [[std::ratio<1000, 1>]]),
+  parse("mega", [[std::ratio<1000000, 1>]]),
+  parse("giga", [[std::ratio<1000000000, 1>]]),
+  parse("tera", [[std::ratio<1000000000000, 1>]]),
+  parse("peta", [[std::ratio<1000000000000000, 1>]]),
+  parse("exa", [[std::ratio<1000000000000000000, 1>]]),
 
   ----------------------------------------------------------------------
   --                           preprocessor                           --
