@@ -477,4 +477,25 @@ private:
     i(4, "float"),
     t ")",
   }),
+
+	-- Smoothing control signals
+	s(
+		"slopeinit",
+		fmt(
+			"SlopeSignal<{}> {} = makeSlope(in0({}), {});",
+			{ i(1, "float"), i(2, "controlRateFreq"), i(3, "1"), i(4, "m_freq_past") }
+		)
+	),
+
+	s(
+		"slopeconsume",
+		fmt(
+			[[const auto {} = {}.consume();
+{} = {};
+			]],
+			{ i(1, "freq"), i(2, "controlRateFreq"), i(3, "m_freq_past"), rep(1) }
+		)
+	),
+
+
 }
