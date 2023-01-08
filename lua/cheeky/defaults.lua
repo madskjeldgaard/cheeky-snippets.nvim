@@ -4,6 +4,7 @@ return {
     lua = true,
     cpp = true,
     asm = true,
+    cmake = true,
     markdown = true,
   },
 }

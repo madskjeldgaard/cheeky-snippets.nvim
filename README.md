@@ -9,7 +9,9 @@ Inspired by [spoon.nvim](https://github.com/utilyre/spoon.nvim)
 * General Snippets aka `all` (available everywhere)
 * Lua
 * CPP (with support for a lot of STL containers and algos and modern c++ stuff etc.)
+* CMake
 * Assembly
+* Markdown
 
 ## Installation
 
@@ -27,6 +29,8 @@ use{
 				lua = true,
 				cpp = true,
 				asm = true,
+				cmake = true,
+				markdown = true,
 			},
 		})			
 	end
