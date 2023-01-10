@@ -28,7 +28,7 @@ endfunction()]],
   s(
     "cpm",
     fmt(
-      [[set(CPM_DOWNLOAD_VERSION 0.27.2)
+      [[set(CPM_DOWNLOAD_VERSION 0.35.0)
 set(CPM_DOWNLOAD_LOCATION "${CMAKE_BINARY_DIR}/cmake/CPM_${CPM_DOWNLOAD_VERSION}.cmake")
 
 if(NOT (EXISTS ${CPM_DOWNLOAD_LOCATION}))
@@ -57,5 +57,14 @@ target_link_libraries([]
         delimiters = "[]",
       }
     )
-  ),
+  ),s("lib", fmt([[cmake_minimum_required(VERSION 3.19)
+project({})
+
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+
+add_library({}
+	{}
+	{}
+)]], { i(1, "mylibrary"), rep(1), i(2, "OBJECT"), i(3, "mylibfile.h") }))
 }
