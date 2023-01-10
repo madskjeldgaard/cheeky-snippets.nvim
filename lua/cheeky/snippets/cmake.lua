@@ -57,7 +57,11 @@ target_link_libraries([]
         delimiters = "[]",
       }
     )
-  ),s("lib", fmt([[cmake_minimum_required(VERSION 3.19)
+  ),
+  s(
+    "lib",
+    fmt(
+      [[cmake_minimum_required(VERSION 3.19)
 project({})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -66,5 +70,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 add_library({}
 	{}
 	{}
-)]], { i(1, "mylibrary"), rep(1), i(2, "OBJECT"), i(3, "mylibfile.h") }))
+)]],
+      { i(1, "mylibrary"), rep(1), i(2, "OBJECT"), i(3, "mylibfile.h") }
+    )
+  ),
 }
