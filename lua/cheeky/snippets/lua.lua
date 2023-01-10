@@ -32,20 +32,27 @@ local conds = require "luasnip.extras.conditions"
 
 -- snippets
 local SN = {
-	s("autocommand", fmt([[ vim.api.nvim_create_autocmd(
+  s(
+    "autocommand",
+    fmt(
+      [[ vim.api.nvim_create_autocmd(
     [],
     { command = [] })]],
-		{ i(1, [["BufReadPost"]]), i(2, [[print("oh hey guys!")]]) }, { delimiters = "[]" })
-	),
+      { i(1, [["BufReadPost"]]), i(2, [[print("oh hey guys!")]]) },
+      { delimiters = "[]" }
+    )
+  ),
 
-	s("excommand", fmt([[vim.api.nvim_create_user_command('[]', [], [])]],
-{
-    i(1, "MyCrazyCommand"),
-    i(2, "function() print([[yeeey]]) end"),
-    i(3, "{}"),
-}, {
-    delimiters = "[]",
-})),
+  s(
+    "excommand",
+    fmt([[vim.api.nvim_create_user_command('[]', [], [])]], {
+      i(1, "MyCrazyCommand"),
+      i(2, "function() print([[yeeey]]) end"),
+      i(3, "{}"),
+    }, {
+      delimiters = "[]",
+    })
+  ),
   s(
     "table-print",
     fmta(
