@@ -343,6 +343,15 @@ std::sample({}.begin(), {}.end(), {}, {}, {});]],
     })
   ),
 
+	-- Span
+	s(
+		"span",
+		fmt("std::span<{}> {}({});", {
+			i(1, "int"),
+			i(2, "mySpan"),
+			i(3, "myArray"),
+		})
+	),
   -- Vector
   s(
     "vec",
