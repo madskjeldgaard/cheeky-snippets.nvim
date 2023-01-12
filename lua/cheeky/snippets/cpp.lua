@@ -343,15 +343,15 @@ std::sample({}.begin(), {}.end(), {}, {}, {});]],
     })
   ),
 
-	-- Span
-	s(
-		"span",
-		fmt("std::span<{}> {}({});", {
-			i(1, "int"),
-			i(2, "mySpan"),
-			i(3, "myArray"),
-		})
-	),
+  -- Span
+  s(
+    "span",
+    fmt("std::span<{}> {}({});", {
+      i(1, "int"),
+      i(2, "mySpan"),
+      i(3, "myArray"),
+    })
+  ),
   -- Vector
   s(
     "vec",
@@ -506,17 +506,30 @@ private:
     )
   ),
 
-----------------------------------------------------------------------
---                              catch2                              --
-----------------------------------------------------------------------
-	s("testcase", fmt([[TEST_CASE( "[]", "[]" ) {
+  ----------------------------------------------------------------------
+  --                              catch2                              --
+  ----------------------------------------------------------------------
+  s(
+    "testcase",
+    fmt(
+      [[TEST_CASE( "[]", "[]" ) {
 	[]
-}]], { i(1, [[Factorials are computed]]), i(2, "[factorial]"), i(3, "")}, { delimiters = "[]"})),
+}]],
+      { i(1, [[Factorials are computed]]), i(2, "[factorial]"), i(3, "") },
+      { delimiters = "[]" }
+    )
+  ),
 
-	s("require", fmt("REQUIRE({});", { i(1, "2 == 3")})),
-	s("check", fmt("CHECK({});", { i(1, "2 == 3")})),
-	s("benchmark", fmt([[BENCHMARK("[]") {
+  s("require", fmt("REQUIRE({});", { i(1, "2 == 3") })),
+  s("check", fmt("CHECK({});", { i(1, "2 == 3") })),
+  s(
+    "benchmark",
+    fmt(
+      [[BENCHMARK("[]") {
         return [];
-    };]], { i(1, [[my_benchmark is cool]]), i(2, "1+1")}, { delimiters = "[]"}))
-
+    };]],
+      { i(1, [[my_benchmark is cool]]), i(2, "1+1") },
+      { delimiters = "[]" }
+    )
+  ),
 }
