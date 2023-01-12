@@ -505,4 +505,18 @@ private:
       { i(1, "freq"), i(2, "controlRateFreq"), i(3, "m_freq_past"), rep(1) }
     )
   ),
+
+----------------------------------------------------------------------
+--                              catch2                              --
+----------------------------------------------------------------------
+	s("testcase", fmt([[TEST_CASE( "[]", "[]" ) {
+	[]
+}]], { i(1, [[Factorials are computed]]), i(2, "[factorial]"), i(3, "")}, { delimiters = "[]"})),
+
+	s("require", fmt("REQUIRE({});", { i(1, "2 == 3")})),
+	s("check", fmt("CHECK({});", { i(1, "2 == 3")})),
+	s("benchmark", fmt([[BENCHMARK("[]") {
+        return [];
+    };]], { i(1, [[my_benchmark is cool]]), i(2, "1+1")}, { delimiters = "[]"}))
+
 }
