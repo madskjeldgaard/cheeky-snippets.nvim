@@ -521,6 +521,7 @@ private:
   ),
 
   s("require", fmt("REQUIRE({});", { i(1, "2 == 3") })),
+  s("requirethat", fmt("REQUIRE_THAT({}, {});", { i(1, "inval"), i(2, "Catch::WithinRel(2.0)") })),
   s("check", fmt("CHECK({});", { i(1, "2 == 3") })),
   s(
     "benchmark",
