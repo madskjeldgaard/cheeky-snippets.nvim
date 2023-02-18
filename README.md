@@ -12,28 +12,30 @@ Inspired by [spoon.nvim](https://github.com/utilyre/spoon.nvim)
 * CMake
 * Assembly
 * Markdown
+* SuperCollider
 
 ## Installation
 
 ```lua
 use{
-	"madskjeldgaard/cheeky-snippets.nvim",
-	requires = {
-		"L3MON4D3/LuaSnip"
-	},
-	config = function()
-	local cheeky = require("cheeky")
-		cheeky.setup({
-			langs = {
-				all = true,
-				lua = true,
-				cpp = true,
-				asm = true,
-				cmake = true,
-				markdown = true,
-			},
-		})			
-	end
+  "madskjeldgaard/cheeky-snippets.nvim",
+  requires = {
+    "L3MON4D3/LuaSnip"
+  },
+  config = function()
+    local cheeky = require("cheeky")
+    cheeky.setup({
+      langs = {
+        all = true,
+        lua = true,
+        cpp = true,
+        asm = true,
+        cmake = true,
+        markdown = true,
+        supercollider = true
+      },
+    })
+  end
 }
 ```
 

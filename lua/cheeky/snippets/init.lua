@@ -4,6 +4,7 @@ local cpp = require "cheeky.snippets.cpp"
 local asm = require "cheeky.snippets.asm"
 local markdown = require "cheeky.snippets.markdown"
 local cmake = require "cheeky.snippets.cmake"
+local supercollider = require "cheeky.snippets.supercollider"
 
 return {
   all = all,
@@ -12,4 +13,5 @@ return {
   asm = asm,
   markdown = markdown,
   cmake = cmake,
+  supercollider = supercollider
 }
