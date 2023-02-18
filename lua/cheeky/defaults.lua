@@ -6,6 +6,6 @@ return {
     asm = true,
     cmake = true,
     markdown = true,
-    supercollider = true
+    supercollider = true,
   },
 }

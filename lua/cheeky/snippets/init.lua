@@ -13,5 +13,5 @@ return {
   asm = asm,
   markdown = markdown,
   cmake = cmake,
-  supercollider = supercollider
+  supercollider = supercollider,
 }
